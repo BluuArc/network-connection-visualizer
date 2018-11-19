@@ -16,6 +16,11 @@ export default new Router({
       component: require('@/components/InspireView').default
     },
     {
+      path: '/visualize',
+      name: 'visualize',
+      component: require('@/views/MainVisualization').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

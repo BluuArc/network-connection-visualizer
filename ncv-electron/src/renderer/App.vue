@@ -55,13 +55,13 @@
         </v-btn>
       </v-toolbar>
       <v-content>
-        <v-container fluid fill-height>
+        <v-container fluid :fill-height="false">
           <v-slide-y-transition mode="out-in">
-            <router-view></router-view>
+            <router-view/>
           </v-slide-y-transition>
         </v-container>
       </v-content>
-      <v-navigation-drawer
+      <!-- <v-navigation-drawer
         temporary
         fixed
         :right="right"
@@ -76,10 +76,11 @@
             <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
           </v-list-tile>
         </v-list>
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
       <v-footer :fixed="fixed" app>
-        <v-spacer></v-spacer>
+        <v-spacer/>
         <span>&copy; 2017</span>
+        <v-spacer/>
       </v-footer>
     </v-app>
   </div>
@@ -94,7 +95,8 @@
       fixed: false,
       items: [
         { icon: 'apps', title: 'Welcome', to: '/' },
-        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' },
+        { icon: 'bubble_chart', title: 'Visualize', to: '/visualize' },
       ],
       miniVariant: false,
       right: true,
