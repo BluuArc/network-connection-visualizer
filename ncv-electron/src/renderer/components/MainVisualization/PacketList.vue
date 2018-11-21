@@ -2,7 +2,7 @@
   <v-container fluid class="pr-0 pb-1 pl-1 pt-0" grid-list-md>
     <v-layout row>
       <v-flex>
-        <h1 class="headline">Packets</h1>
+        <h1 class="headline">Packets ({{ packets.length }})</h1>
       </v-flex>
     </v-layout>
     <v-layout row wrap style="max-height: 500px; overflow-y: auto;">
@@ -21,7 +21,8 @@ export default {
   computed: {
     ...mapState('PacketCaptureApi', ['packets']),
     sortedPackets () {
-      return this.packets.slice().sort((a, b) => new Date(a.time) - new Date(b.time));
+      // sort by time sent by newest first
+      return this.packets.slice().sort((a, b) => new Date(b.time) - new Date(a.time));
     },
   },
 };

@@ -4,6 +4,10 @@ export default {
     deviceList: [],
     packets: [],
     isRunning: false,
+    location: {
+      latitude: 41.86,
+      longitude: -87.64,
+    },
   },
   mutations: {
     setDeviceList (state, list) {
@@ -14,6 +18,10 @@ export default {
     },
     setPacketList (state, list) {
       state.packets = list.slice();
+    },
+    setCoordinates (state, { lat, lng }) {
+      state.location.latitude = lat;
+      state.location.longitude = lng;
     },
   },
   actions: {
@@ -36,9 +44,9 @@ export default {
 
       return data;
     },
-    async startCapture ({ dispatch }) {
+    async startCapture ({ dispatch }, refreshRate) {
       await fetch('http://localhost:3000/startCapture');
-      await dispatch('autoUpdatePacketData');
+      await dispatch('autoUpdatePacketData', refreshRate);
     },
     async stopCapture () {
       await fetch('http://localhost:3000/stopCapture');
@@ -50,12 +58,12 @@ export default {
       commit('setPacketList', data);
       return data;
     },
-    async autoUpdatePacketData ({ dispatch }) {
+    async autoUpdatePacketData ({ dispatch }, refreshRate = 500) {
       await dispatch('getPacketData');
 
       const isRunning = await dispatch('updateRunningStatus');
       if (isRunning) {
-        setTimeout(() => dispatch('autoUpdatePacketData'), 500);
+        setTimeout(() => dispatch('autoUpdatePacketData'), refreshRate);
       }
     },
   },
