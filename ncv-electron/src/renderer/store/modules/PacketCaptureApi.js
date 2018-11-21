@@ -11,12 +11,14 @@ export default {
   },
   actions: {
     async getDeviceList ({ commit }) {
-      const data = fetch('http://localhost:3000/devices')
+      const data = await fetch('http://localhost:3000/devices')
         .then(res => res.json());
+      console.debug(data);
       commit('setDeviceList', data);
+      return data;
     },
     async getActiveDevice () {
-      const data = fetch('http://localhost:3000/device')
+      const data = await fetch('http://localhost:3000/device')
         .then(res => res.json());
 
       return data;
