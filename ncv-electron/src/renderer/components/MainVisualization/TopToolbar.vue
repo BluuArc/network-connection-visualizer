@@ -3,13 +3,26 @@
     <v-layout align-center>
       <v-flex>
         <v-select
+          :disabled="isRunning"
           :items="addresses"
           v-model="activeIp"
           label="Selected IP"/>
       </v-flex>
       <v-flex>
-        <v-btn :disabled="!activeIp" color="success" round small>
+        <v-btn
+          v-if="!isRunning"
+          @click="$emit('startcapture')"
+          :disabled="!activeIp"
+          color="success"
+          round small>
           Start
+        </v-btn>
+        <v-btn
+          v-else
+          @click="$emit('stopcapture')"
+          color="error"
+          round small>
+          Stop
         </v-btn>
       </v-flex>
     </v-layout>
@@ -17,8 +30,11 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 export default {
+  computed: {
+    ...mapState('PacketCaptureApi', ['isRunning']),
+  },
   data () {
     return {
       activeDevice: {},

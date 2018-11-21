@@ -1,7 +1,7 @@
 <template>
   <v-layout row wrap justify-center>
     <v-flex xs12>
-      <top-toolbar/>
+      <top-toolbar @startcapture="startCapture" @stopcapture="stopCapture"/>
     </v-flex>
     <v-flex xs8>
       <network-map/>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-// import { mapActions, mapState } from 'vuex';
+import { mapActions } from 'vuex';
 import TopToolbar from '@/components/MainVisualization/TopToolbar';
 import NetworkMap from '@/components/MainVisualization/NetworkMap';
 import PacketList from '@/components/MainVisualization/PacketList';
@@ -27,6 +27,9 @@ export default {
     NetworkMap,
     PacketList,
     TimelineBar,
+  },
+  methods: {
+    ...mapActions('PacketCaptureApi', ['startCapture', 'stopCapture']),
   },
   mounted () {
     console.debug(this);

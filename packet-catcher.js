@@ -8,7 +8,7 @@ const PROTOCOL = decoders.PROTOCOL;
 
 module.exports = class PacketCatcher {
   constructor (device = '', filter = '') {
-    this._cap = new Cap();
+    this._cap = null;
     this._device = device;
 
     this._filter = '';
@@ -20,13 +20,6 @@ module.exports = class PacketCatcher {
     this._isRunning = false;
 
     this._sessionPackets = [];
-
-    this._cap.on('packet', () => {
-      const packetData = this._getPacketData();
-      if (this._isUsablePacket(packetData)) {
-        this._sessionPackets.push(packetData);
-      }
-    })
   }
 
   static get Cap () {
@@ -55,6 +48,13 @@ module.exports = class PacketCatcher {
 
   startCapture () {
     try {
+      this._cap = new Cap();
+      this._cap.on('packet', () => {
+        const packetData = this._getPacketData();
+        if (this._isUsablePacket(packetData)) {
+          this._sessionPackets.push(packetData);
+        }
+      });
       this._sessionPackets = [];
       this._linkType = this._cap.open(this._device, this._filter, this._bufSize, this._buffer);
       this._cap.setMinBytes && this._cap.setMinBytes(0);
