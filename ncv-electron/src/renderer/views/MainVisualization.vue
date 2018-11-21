@@ -16,6 +16,7 @@
 </template>
 
 <script>
+// import { mapActions, mapState } from 'vuex';
 import TopToolbar from '@/components/MainVisualization/TopToolbar';
 import NetworkMap from '@/components/MainVisualization/NetworkMap';
 import PacketList from '@/components/MainVisualization/PacketList';
@@ -26,6 +27,9 @@ export default {
     NetworkMap,
     PacketList,
     TimelineBar,
+  },
+  mounted () {
+    console.debug(this);
   },
 };
 </script>
