@@ -1,13 +1,14 @@
 <template>
   <svg
     width="800" height="480"
+    class="network-map"
     :viewBox="`0 0 ${viewBoxDimensions.join(' ')}`"
     style="width: 100%;"/>
 </template>
 
 <script>
 /* global d3 */
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   computed: {
@@ -15,6 +16,7 @@ export default {
     ...mapState('PacketCaptureApi', {
       mapLocation: 'location',
     }),
+    ...mapGetters('PacketCaptureApi', ['getPacketId']),
     viewBoxDimensions: () => [1920, 1080],
   },
   data () {
@@ -72,6 +74,7 @@ export default {
       const packetPoints = this.svg.selectAll('.packet-point').data(this.packets);
 
       packetPoints
+        .attr('id', this.getPacketId)
         .attr('fill', p => p.srcloc ? 'red' : 'blue') // red = them to me, blue = me to them
         .attr('cx', p => this.projection((p.srcloc || p.dstloc).ll.slice().reverse())[0])
         .attr('cy', p => this.projection((p.srcloc || p.dstloc).ll.slice().reverse())[1]);
@@ -79,13 +82,56 @@ export default {
       packetPoints
         .enter().append('circle')
         .classed('packet-point', true)
+        .attr('id', this.getPacketId)
         .attr('fill', p => p.srcloc ? 'red' : 'blue') // red = them to me, blue = me to them
         .attr('r', 5)
-        .attr('cx', p => this.projection((p.srcloc || p.dstloc).ll.slice().reverse())[0])
+        .attr('cx', p => this.projection((p.srcloc || p.dstloc).ll.slice().reverse())[0]) // packet has [lat,lng], so convert to [lng]
         .attr('cy', p => this.projection((p.srcloc || p.dstloc).ll.slice().reverse())[1]);
 
       packetPoints.exit().remove();
     },
+    drawPacketPaths () {
+      const packetPaths = this.svg.selectAll('.packet-path').data(this.packets);
+
+      // path code based on http://www.tnoda.com/blog/2014-04-02
+      const myLocation = [this.mapLocation.longitude, this.mapLocation.latitude];
+      const generatePath = (p) => {
+        let coordinates;
+        if (p.dstloc) { // from me to them
+          coordinates = [
+            myLocation,
+            p.dstloc.ll.slice().reverse(),
+          ];
+        } else {
+          coordinates = [
+            p.srcloc.ll.slice().reverse(),
+            myLocation,
+          ];
+        }
+        return this.path({
+          type: 'LineString',
+          coordinates,
+        });
+      };
+
+      packetPaths
+        .attr('id', this.getPacketId)
+        .attr('d', generatePath);
+
+      packetPaths
+        .enter().append('path')
+        .classed('route', true)
+        .classed('exit-route', p => !!p.dstloc)
+        .classed('enter-route', p => !!p.srcloc)
+        .attr('id', this.getPacketId)
+        .attr('d', generatePath);
+
+      packetPaths.exit().remove();
+      // svg.append("path")
+      //          .datum({type: "LineString", coordinates: [origin, destination]})
+      //          .attr("class", "route")
+      //          .attr("d", path);
+    }
   },
   watch: {
     mapLocation: {
@@ -97,14 +143,33 @@ export default {
     packets () {
       if (this.readyForPackets) {
         this.drawPackets();
+        this.drawPacketPaths();
       }
     },
+    readyForPackets (newValue) {
+      if (newValue && this.packets.length > 0) {
+        this.drawPackets();
+        this.drawPacketPaths();
+      }
+    }
   },
 };
 </script>
 
-<style scoped>
-svg {
+<style>
+svg.network-map {
   border: 1px solid white;
+
+}
+svg.network-map path.route {
+  fill: transparent;
+}
+
+svg.network-map path.route.exit-route {
+  stroke: cornflowerblue;
+}
+
+svg.network-map path.route.enter-route {
+  stroke: orange;
 }
 </style>

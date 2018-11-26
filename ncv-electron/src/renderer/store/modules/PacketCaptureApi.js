@@ -22,7 +22,15 @@ export default {
     setCoordinates (state, { lat, lng }) {
       state.location.latitude = lat;
       state.location.longitude = lng;
+      console.log(state.location);
     },
+  },
+  getters: {
+    getPacketId: () => (packet) => [
+      packet.time,
+      packet.srcaddr, packet.srcport,
+      packet.dstaddr, packet.dstport
+    ].join('__'),
   },
   actions: {
     async getDeviceList ({ commit }) {

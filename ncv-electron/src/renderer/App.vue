@@ -27,7 +27,7 @@
       </v-navigation-drawer>
       <v-toolbar fixed app :clipped-left="clipped">
         <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <v-btn 
+        <!-- <v-btn 
           icon
           @click.native.stop="miniVariant = !miniVariant"
         >
@@ -44,14 +44,14 @@
           @click.native.stop="fixed = !fixed"
         >
           <v-icon>remove</v-icon>
-        </v-btn>
+        </v-btn> -->
         <v-toolbar-title v-text="title"></v-toolbar-title>
-        <v-spacer></v-spacer>
+        <!-- <v-spacer></v-spacer>
         <v-btn
           icon
           @click.native.stop="rightDrawer = !rightDrawer"
         >
-          <v-icon>menu</v-icon>
+          <v-icon>menu</v-icon> -->
         </v-btn>
       </v-toolbar>
       <v-content>

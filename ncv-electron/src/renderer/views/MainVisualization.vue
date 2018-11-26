@@ -53,7 +53,6 @@ export default {
     ...mapActions('PacketCaptureApi', ['startCapture', 'stopCapture']),
     ...mapMutations('PacketCaptureApi', ['setCoordinates']),
     updateCoordinates: debounce(function () {
-      console.debug('updating coordinates');
       this.setCoordinates({ lat: this.latitude, lng: this.longitude });
     }, 500),
     syncStateToLocalCoords () {

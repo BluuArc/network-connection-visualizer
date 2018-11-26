@@ -73,6 +73,6 @@ app.get('/packets', (req, res) => {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-const ip = '10.55.222.187';
+const ip = '10.0.0.249';
 packetCatcher.device = PacketCatcher.Cap.findDevice(ip);
 console.warn(`using default IP [${ip}]`);
