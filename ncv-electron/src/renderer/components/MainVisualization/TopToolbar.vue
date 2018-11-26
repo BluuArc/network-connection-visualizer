@@ -37,31 +37,45 @@ export default {
   },
   data () {
     return {
-      activeDevice: {},
       activeIp: '',
       addresses: [],
+      activeDevice: {},
     };
   },
   methods: {
-    ...mapActions('PacketCaptureApi', ['getActiveDevice', 'getDeviceList']),
+    ...mapActions('PacketCaptureApi', ['getActiveDevice', 'getDeviceList', 'changeDevice']),
     async initializeDeviceList () {
-      let deviceList = await this.getDeviceList();
-      const activeDevice = await this.getActiveDevice();
-      const currentAddressEntry = activeDevice.addresses
-        .find(entry => entry.netmask || entry.broadaddr);
-
+      const deviceList = await this.getDeviceList();
       this.addresses = deviceList
         .filter(d => d.addresses && d.addresses.some(a => a.netmask || a.broadaddr))
         .map(d => d.addresses.find(a => a.netmask || a.broadaddr).addr);
-      this.activeIp = currentAddressEntry && currentAddressEntry.addr;
+    },
+    async updateActiveDevice () {
+      const activeDevice = await this.getActiveDevice();
+      if (activeDevice) {
+        console.debug({ activeDevice });
+        this.activeDevice = activeDevice;
+        const currentAddressEntry = activeDevice.addresses
+          .find(entry => entry.netmask || entry.broadaddr);
+        this.activeIp = currentAddressEntry && currentAddressEntry.addr;
+      }
     },
   },
   async mounted () {
     await this.initializeDeviceList();
+    await this.updateActiveDevice();
   },
   watch: {
-    activeIp (newValue, oldValue) {
+    async activeIp (newValue, oldValue) {
       console.debug('changed ip', oldValue, newValue);
+
+      const currentAddressEntry = !!this.activeDevice.addresses && this.activeDevice.addresses
+        .find(entry => entry.netmask || entry.broadaddr);
+      const activeDeviceIp = currentAddressEntry && currentAddressEntry.addr;
+      if ((newValue && !activeDeviceIp) || (activeDeviceIp && newValue !== activeDeviceIp)) {
+        await this.changeDevice(newValue);
+        await this.updateActiveDevice();
+      }
     },
   },
 };

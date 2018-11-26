@@ -22,7 +22,6 @@ export default {
     setCoordinates (state, { lat, lng }) {
       state.location.latitude = lat;
       state.location.longitude = lng;
-      console.log(state.location);
     },
   },
   getters: {
@@ -47,10 +46,17 @@ export default {
       return data.isRunning;
     },
     async getActiveDevice () {
-      const data = await fetch('http://localhost:3000/device')
-        .then(res => res.json());
-
-      return data;
+      try {
+        const data = await fetch('http://localhost:3000/device')
+          .then(res => res.json());
+        if (data && data.statusCode === 404) {
+          throw data;
+        }
+        return data;
+      } catch (err) {
+        console.error(err);
+        return null;
+      }
     },
     async startCapture ({ dispatch }, refreshRate) {
       await fetch('http://localhost:3000/startCapture');
@@ -73,6 +79,16 @@ export default {
       if (isRunning) {
         setTimeout(() => dispatch('autoUpdatePacketData'), refreshRate);
       }
+    },
+    async changeDevice (context, ip) {
+      await fetch('http://localhost:3000/device', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        body: JSON.stringify({ ip }),
+      });
     },
   },
 }

@@ -127,10 +127,6 @@ export default {
         .attr('d', generatePath);
 
       packetPaths.exit().remove();
-      // svg.append("path")
-      //          .datum({type: "LineString", coordinates: [origin, destination]})
-      //          .attr("class", "route")
-      //          .attr("d", path);
     }
   },
   watch: {

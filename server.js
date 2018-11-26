@@ -2,6 +2,7 @@
 
 const Boom = require('boom');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
@@ -13,6 +14,9 @@ function sendBoom (res, boom) {
   const { statusCode, payload } = boom.output;
   res.status(statusCode).send(payload);
 }
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -30,12 +34,25 @@ app.get('/devices', (req, res) => {
 
 app.route('/device')
   .get((req, res) => {
-    res.send(packetCatcher.deviceInfo);
+    const deviceInfo = packetCatcher.deviceInfo;
+    if (!deviceInfo) {
+      sendBoom(res, Boom.notFound('No device found'));
+    } else {
+      res.send(packetCatcher.deviceInfo);
+    }
+  })
+  .post((req, res) => {
+    const ip = req.body.ip;
+    console.debug('new ip', ip);
+    try {
+      packetCatcher.device = PacketCatcher.Cap.findDevice(ip);
+      console.log('new device', packetCatcher.deviceInfo && packetCatcher.deviceInfo.name);
+      res.sendStatus(200);
+    } catch(err) {
+      console.error(err);
+      sendBoom(res, Boom.internal('Error changing device', err));
+    }
   });
-// TODO: implement device picker
-// .post('/device', (req, res) => {
-
-// });
 
 app.get('/startCapture', (req, res) => {
   try {
@@ -73,6 +90,6 @@ app.get('/packets', (req, res) => {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-const ip = '10.0.0.249';
+const ip = '127.0.0.1';
 packetCatcher.device = PacketCatcher.Cap.findDevice(ip);
 console.warn(`using default IP [${ip}]`);

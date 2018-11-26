@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "boom": "^7.2.2",
     "cap": "^0.2.0",
     "express": "^4.16.4",
