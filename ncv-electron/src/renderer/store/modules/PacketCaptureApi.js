@@ -65,6 +65,9 @@ export default {
       packet.srcaddr, packet.srcport,
       packet.dstaddr, packet.dstport
     ].join('__'),
+
+    // check if packet goes from me to them
+    isExitPacket: () => (packet) => !packet.srcloc, // if srcloc is null, then it's from me
   },
   actions: {
     async getDeviceList ({ commit }) {
