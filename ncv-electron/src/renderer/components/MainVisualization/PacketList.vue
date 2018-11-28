@@ -5,9 +5,9 @@
         <h1 class="headline">Packets ({{ packets.length }})</h1>
       </v-flex>
     </v-layout>
-    <v-layout row wrap style="max-height: 500px; overflow-y: auto;">
+    <v-layout row wrap style="max-height: 400px; overflow-y: auto;">
       <v-flex xs12 v-for="(p, i) in sortedPackets" :key="i">
-        <v-card @click.native="onPacketCardClick(p)" :color="activePacket === p ? 'red' : undefined">
+        <v-card @click.native="onPacketCardClick(p)" :color="activePacket === p ? 'grey' : undefined">
           <v-container fluid>
             <v-layout row>
               <v-flex>

@@ -1,6 +1,6 @@
 <template>
   <svg
-    width="800" height="480"
+    width="800" height="375"
     class="network-map"
     :viewBox="`0 0 ${viewBoxDimensions.join(' ')}`"
     style="width: 100%;"/>
@@ -17,7 +17,7 @@ export default {
       mapLocation: 'location',
     }),
     ...mapGetters('PacketCaptureApi', ['getPacketId']),
-    viewBoxDimensions: () => [1920, 1080],
+    viewBoxDimensions: () => [1920, 960],
   },
   data () {
     return {
