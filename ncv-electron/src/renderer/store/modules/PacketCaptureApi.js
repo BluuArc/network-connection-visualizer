@@ -1,3 +1,34 @@
+import greenlet from 'greenlet';
+
+const getPacketFrequencyByTime = greenlet((packets) => {
+  const timeAccumulator = {};
+  packets.forEach(packet => {
+    const time = packet.time;
+    const isPacketEntering = !!packet.srcloc; // source is not null (i.e. not us)
+    if (timeAccumulator[time] === undefined) {
+      timeAccumulator[time] = {
+        in: 0,
+        out: 0,
+      };
+    }
+    if (isPacketEntering) {
+      timeAccumulator[time].in++;
+    } else {
+      timeAccumulator[time].out++;
+    }
+  });
+  const keys = [];
+  for (const key in timeAccumulator) {
+    keys.push(key);
+  }
+  return keys
+    .sort((a, b) => new Date(a) - new Date(b))
+    .map(time => ({
+      time,
+      count: timeAccumulator[time]
+    }));
+});
+
 export default {
   namespaced: true,
   state: {
@@ -8,6 +39,7 @@ export default {
       latitude: 41.86,
       longitude: -87.64,
     },
+    packetsByTime: [],
   },
   mutations: {
     setDeviceList (state, list) {
@@ -18,6 +50,9 @@ export default {
     },
     setPacketList (state, list) {
       state.packets = list.slice();
+    },
+    setPacketByTimeList (state, list) {
+      state.packetsByTime = list.slice();
     },
     setCoordinates (state, { lat, lng }) {
       state.location.latitude = lat;
@@ -68,8 +103,10 @@ export default {
     async getPacketData ({ commit }) {
       const data = await fetch('http://localhost:3000/packets')
         .then(res => res.json());
-      console.debug('packet data', data);
+      const packetsByTime = await getPacketFrequencyByTime(data);
+      console.debug('packet data', data, packetsByTime);
       commit('setPacketList', data);
+      commit('setPacketByTimeList', packetsByTime);
       return data;
     },
     async autoUpdatePacketData ({ dispatch }, refreshRate = 500) {

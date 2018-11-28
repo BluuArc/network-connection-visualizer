@@ -44,7 +44,7 @@ export default {
       const [offsetWidth, offsetHeight] = this.offsetDimensions;
 
       this.scale.x = d3.scaleTime().range([0, offsetWidth]);
-      this.scale.y = d3.scaleLinear().range([0, offsetHeight]);
+      this.scale.y = d3.scaleLinear().range([offsetHeight, 0]);
 
       this.line = d3.line()
         .x((p, i) => this.scale.x(i))
