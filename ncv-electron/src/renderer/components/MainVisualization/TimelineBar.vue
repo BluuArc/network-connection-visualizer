@@ -7,9 +7,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 /* global d3 */
 export default {
   computed: {
+    ...mapState('PacketCaptureApi', ['packetsByTime']),
     viewBoxDimensions: () => [1500, 250],
     margins: () => ({ top: 30, right: 20, bottom: 30, left: 50 }),
     offsetDimensions () {
@@ -37,6 +39,7 @@ export default {
     this.svg = d3.select(this.$el);
     this.initializeGraph();
     this.drawOverlay();
+    this.readyForPackets = true;
     console.debug('timeline loaded');
   },
   methods: {
@@ -47,16 +50,20 @@ export default {
       this.scale.y = d3.scaleLinear().range([offsetHeight, 0]);
 
       this.line = d3.line()
-        .x((p, i) => this.scale.x(i))
-        .y(p => this.scale.y(Math.round(Math.random() * 2) - 1));
+        .x((p, i) => this.scale.x(new Date(p.time)))
+        .curve(d3.curveMonotoneX);
 
       this.graphGroup = this.svg.append('g')
         .attr('transform', `translate(${this.margins.left}, ${this.margins.top})`);
     },
+    updateScales () {
+      this.scale.x.domain(d3.extent(this.packetsByTime.map(p => new Date(p.time))));
+      console.debug(this.scale.x.domain());
+      this.scale.y.domain([0, d3.max(this.packetsByTime.map(p => Math.max(p.count.in, p.count.out)))]);
+    },
     drawOverlay () {
       // eslint-disable-next-line no-unused-vars
       const [offsetWidth, offsetHeight] = this.offsetDimensions;
-      // TODO: update x and y scales here
       let xAxis = this.graphGroup.selectAll('#x-axis');
       if (xAxis.empty()) {
         xAxis = this.graphGroup.append('g')
@@ -71,7 +78,48 @@ export default {
           .attr('id', 'y-axis');
       }
       yAxis.call(d3.axisLeft(this.scale.y));
-    }
+    },
+    drawLines () {
+      const inLineFn = this.line.y(p => this.scale.y(p.count.in));
+      let inLine = this.graphGroup.selectAll('path#in-line');
+      if (inLine.empty()) {
+        inLine = this.graphGroup.append('path')
+          .attr('id', 'in-line')
+          .style('stroke', 'orange')
+          .style('fill', 'none');
+      }
+      inLine.datum(this.packetsByTime)
+        .attr('d', inLineFn);
+
+      const outLineFn = this.line.y(p => this.scale.y(p.count.out));
+      let outLine = this.graphGroup.selectAll('path#out-line');
+      if (outLine.empty()) {
+        outLine = this.graphGroup.append('path')
+          .attr('id', 'out-line')
+          .style('stroke', 'cornflowerblue')
+          .style('fill', 'none');
+      }
+      outLine.datum(this.packetsByTime)
+        .attr('d', outLineFn);
+    },
+    updateGraph () {
+      this.updateScales();
+      this.drawOverlay();
+
+      this.drawLines();
+    },
+  },
+  watch: {
+    readyForPackets (isReady) {
+      if (isReady && this.packetsByTime.length > 0) {
+        this.updateGraph();
+      }
+    },
+    packetsByTime () {
+      if (this.readyForPackets) {
+        this.updateGraph();
+      }
+    },
   },
 };
 </script>
