@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout row wrap style="max-height: 500px; overflow-y: auto;">
       <v-flex xs12 v-for="(p, i) in sortedPackets" :key="i">
-        <v-card>
+        <v-card @click.native="onPacketCardClick(p)" :color="activePacket === p ? 'red' : undefined">
           <v-container fluid>
             <v-layout row>
               <v-flex>
@@ -59,10 +59,11 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
+
 export default {
   computed: {
-    ...mapState('PacketCaptureApi', ['packets']),
+    ...mapState('PacketCaptureApi', ['packets', 'activePacket']),
     ...mapGetters('PacketCaptureApi', ['isExitPacket']),
     sortedPackets () {
       // sort by time sent by newest first
@@ -70,6 +71,7 @@ export default {
     },
   },
   methods: {
+    ...mapMutations('PacketCaptureApi', ['setActivePacket']),
     getAddressPortString (address, port) {
       return `${address}:${port}`;
     },
@@ -83,6 +85,13 @@ export default {
         `Lat: ${location.ll[0]}`,
         `Lng: ${location.ll[1]}`,
       ].join('<br>');
+    },
+    onPacketCardClick (packet) {
+      if (this.activePacket !== packet) {
+        this.setActivePacket(packet);
+      } else {
+        this.setActivePacket(null);
+      }
     },
   },
 };

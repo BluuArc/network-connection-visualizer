@@ -40,6 +40,7 @@ export default {
       longitude: -87.64,
     },
     packetsByTime: [],
+    activePacket: null,
   },
   mutations: {
     setDeviceList (state, list) {
@@ -57,6 +58,9 @@ export default {
     setCoordinates (state, { lat, lng }) {
       state.location.latitude = lat;
       state.location.longitude = lng;
+    },
+    setActivePacket (state, newPacket) {
+      state.activePacket = newPacket;
     },
   },
   getters: {

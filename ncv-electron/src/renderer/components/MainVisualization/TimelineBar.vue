@@ -11,7 +11,7 @@ import { mapState } from 'vuex';
 /* global d3 */
 export default {
   computed: {
-    ...mapState('PacketCaptureApi', ['packetsByTime']),
+    ...mapState('PacketCaptureApi', ['packetsByTime', 'activePacket']),
     viewBoxDimensions: () => [1500, 250],
     margins: () => ({ top: 30, right: 20, bottom: 30, left: 50 }),
     offsetDimensions () {
@@ -102,11 +102,28 @@ export default {
       outLine.datum(this.packetsByTime)
         .attr('d', outLineFn);
     },
+    drawTimeIndicator () {
+      let line = this.graphGroup.selectAll('rect#time-indicator');
+      if (line.empty()) {
+        line = this.graphGroup.append('rect')
+          .attr('id', 'time-indicator')
+          .attr('height', this.offsetDimensions[1])
+          .attr('width', 1)
+          .attr('fill', 'white');
+      }
+      if (this.activePacket) {
+        line.attr('x', this.scale.x(new Date(this.activePacket.time)));
+        line.style('display', null);
+      } else {
+        line.style('display', 'none');
+      }
+    },
     updateGraph () {
       this.updateScales();
       this.drawOverlay();
 
       this.drawLines();
+      this.drawTimeIndicator();
     },
   },
   watch: {
@@ -119,6 +136,9 @@ export default {
       if (this.readyForPackets) {
         this.updateGraph();
       }
+    },
+    activePacket () {
+      this.drawTimeIndicator();
     },
   },
 };
