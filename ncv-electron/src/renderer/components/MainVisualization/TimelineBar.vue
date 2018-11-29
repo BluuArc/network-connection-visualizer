@@ -15,7 +15,7 @@ export default {
     viewBoxDimensions: () => [1500, 250],
     margins: () => ({ top: 30, right: 20, bottom: 30, left: 50 }),
     offsetDimensions () {
-      const [width, height] = this.viewBoxDimensions;
+      const [width, height] = [+(this.$el && this.$el.clientWidth) || this.viewBoxDimensions[0], this.viewBoxDimensions[1]];
       const margins = this.margins;
       return [
         width - margins.left - margins.right,
@@ -57,7 +57,8 @@ export default {
         .attr('transform', `translate(${this.margins.left}, ${this.margins.top})`);
     },
     updateScales () {
-      this.scale.x.domain(d3.extent(this.packetsByTime.map(p => new Date(p.time))));
+      this.scale.x.domain(d3.extent(this.packetsByTime.map(p => new Date(p.time))))
+        .range([0, this.offsetDimensions[0]]);
       console.debug(this.scale.x.domain());
       this.scale.y.domain([0, d3.max(this.packetsByTime.map(p => Math.max(p.count.in, p.count.out)))]);
     },
@@ -117,6 +118,7 @@ export default {
       } else {
         line.style('display', 'none');
       }
+      console.debug('drawing time indicator', line.node());
     },
     updateGraph () {
       this.updateScales();

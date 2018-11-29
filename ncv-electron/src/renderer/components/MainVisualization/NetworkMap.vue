@@ -3,7 +3,7 @@
     width="800" height="375"
     class="network-map"
     :viewBox="`0 0 ${viewBoxDimensions.join(' ')}`"
-    style="width: 100%;"/>
+    style="width: 100%; height: auto;"/>
 </template>
 
 <script>

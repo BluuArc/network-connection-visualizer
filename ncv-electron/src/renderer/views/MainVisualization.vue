@@ -3,7 +3,7 @@
     <v-flex xs12>
       <top-toolbar @startcapture="startCapture" @stopcapture="stopCapture"/>
     </v-flex>
-    <v-flex xs8 class="pb-2">
+    <v-flex xs8 class="pb-2" id="map-container">
       <network-map class="d-block"/>
       <v-layout align-center>
         <v-flex>
@@ -21,7 +21,7 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-flex xs4>
+    <v-flex xs4 id="packet-list-container">
       <packet-list/>
     </v-flex>
     <v-flex xs12>
@@ -47,6 +47,7 @@ export default {
   computed: {
     ...mapState('PacketCaptureApi', {
       mapLocation: 'location',
+      packets: 'packets',
     }),
   },
   methods: {
@@ -59,6 +60,16 @@ export default {
       this.latitude = this.mapLocation.latitude;
       this.longitude = this.mapLocation.longitude;
     },
+    updateMaxHeight: debounce(function () {
+      const mapContainer = this.$el.querySelector('#map-container');
+      const mapContainerHeight = Array.from(mapContainer.children).reduce((acc, val) => acc + val.clientHeight, 0);
+      const packetListHeight = mapContainerHeight - (this.$el.querySelector('#packet-list-header').clientHeight);
+
+      const packetList = this.$el.querySelector('#packet-list');
+      if (packetList.clientHeight !== packetListHeight) {
+        packetList.style.maxHeight = `${packetListHeight}px`;
+      }
+    }, 500),
   },
   data () {
     return {
@@ -69,6 +80,11 @@ export default {
   mounted () {
     console.debug(this);
     this.syncStateToLocalCoords();
+    this.updateMaxHeight();
+    window.addEventListener('resize', this.updateMaxHeight);
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.updateMaxHeight);
   },
   watch: {
     mapLocation: {
@@ -82,6 +98,9 @@ export default {
     },
     longitude () {
       this.updateCoordinates();
+    },
+    packets () {
+      this.updateMaxHeight();
     },
   },
 };
