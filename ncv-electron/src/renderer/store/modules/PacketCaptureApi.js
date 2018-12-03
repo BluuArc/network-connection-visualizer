@@ -111,13 +111,16 @@ export default {
     async stopCapture () {
       await fetch('http://localhost:3000/stopCapture');
     },
-    async getPacketData ({ commit }) {
+    async setPacketData ({ commit }, packets = []) {
+      const packetsByTime = await getPacketFrequencyByTime(packets);
+      console.debug('packet data', packets, packetsByTime);
+      commit('setPacketList', packets);
+      commit('setPacketByTimeList', packetsByTime);
+    },
+    async getPacketData ({ dispatch }) {
       const data = await fetch('http://localhost:3000/packets')
         .then(res => res.json());
-      const packetsByTime = await getPacketFrequencyByTime(data);
-      console.debug('packet data', data, packetsByTime);
-      commit('setPacketList', data);
-      commit('setPacketByTimeList', packetsByTime);
+      dispatch('setPacketData', data);
       return data;
     },
     async autoUpdatePacketData ({ dispatch }, refreshRate = 500) {

@@ -4,6 +4,11 @@
       <v-flex>
         <h1 class="headline">Packets ({{ packets.length }})</h1>
       </v-flex>
+      <v-flex class="text-xs-right">
+        <v-btn flat @click="showDialog = true" :disabled="isRunning">
+          Import/Export
+        </v-btn>
+      </v-flex>
     </v-layout>
     <v-layout row wrap style="overflow-y: auto;" id="packet-list">
       <v-flex xs12 v-for="(p, i) in sortedPackets" :key="i">
@@ -66,24 +71,83 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <v-dialog
+      v-model="showDialog"
+      width="750">
+      <v-card class="packet-dialog">
+        <v-container fluid class="pt-0">
+          <v-tabs v-model="activeTab">
+            <v-tab>
+              Import
+            </v-tab>
+            <v-tab>
+              Export
+            </v-tab>
+          </v-tabs>
+        </v-container>
+
+        <v-tabs-items v-model="activeTab">
+          <v-tab-item>
+            <v-card-text>
+              <textarea v-model="inputText"/>
+            </v-card-text>
+            <v-divider/>
+            <v-card-actions>
+              <v-spacer/>
+              <v-btn flat :disabled="!isParsableInput" @click="getPacketsFromInput">
+                Import Packet List
+              </v-btn>
+            </v-card-actions>
+          </v-tab-item>
+          <v-tab-item>
+            <v-card-text>
+              <textarea
+                id="export-text-area" readonly
+                :value="JSON.stringify(packets, null, 2)"
+                @click="selectTextArea"/>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer/>
+              <v-btn flat>
+                Copy Packet List
+              </v-btn>
+            </v-card-actions>
+          </v-tab-item>
+        </v-tabs-items>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import { shell } from 'electron';
 
 export default {
   computed: {
-    ...mapState('PacketCaptureApi', ['packets', 'activePacket']),
+    ...mapState('PacketCaptureApi', ['packets', 'activePacket', 'isRunning']),
     ...mapGetters('PacketCaptureApi', ['isExitPacket', 'getWhoIsLinkTo']),
     sortedPackets () {
       // sort by time sent by newest first
       return this.packets.slice().sort((a, b) => new Date(b.time) - new Date(a.time));
     },
+    isParsableInput () {
+      try {
+        const input = JSON.parse(this.inputText);
+        return Array.isArray(input) && input.length > 0;
+      } catch (err) {
+        return false;
+      }
+    },
   },
+  data: () => ({
+    showDialog: false,
+    activeTab: 0,
+    inputText: '',
+  }),
   methods: {
     ...mapMutations('PacketCaptureApi', ['setActivePacket']),
+    ...mapActions('PacketCaptureApi', ['setPacketData']),
     getAddressPortString (address, port) {
       return `${address}:${port}`;
     },
@@ -109,10 +173,26 @@ export default {
       const link = this.getWhoIsLinkTo(this.isExitPacket(p) ? p.dstaddr : p.srcaddr);
       shell.openExternal(link);
     },
+    selectTextArea () {
+      const textArea = document.querySelector('textarea#export-text-area');
+      console.debug(textArea);
+      textArea.select();
+    },
+    getPacketsFromInput () {
+      const newPackets = JSON.parse(this.inputText);
+      this.setActivePacket(null);
+      this.setPacketData(newPackets);
+      this.showDialog = false;
+      this.inputText = '';
+    },
   },
 };
 </script>
 
 <style>
-
+.packet-dialog textarea {
+  width: 100%;
+  height: 200px;
+  background: black;
+}
 </style>

@@ -1,0 +1,2076 @@
+[{
+    "time": "2018-12-03T00:38:01.337Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "204.79.197.200",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3427779584,
+        3427780095
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Redmond",
+      "ll": [
+        47.6801,
+        -122.1206
+      ],
+      "metro": 819,
+      "area": 1000
+    },
+    "srcport": 56299,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.358Z",
+    "srcaddr": "204.79.197.200",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3427779584,
+        3427780095
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Redmond",
+      "ll": [
+        47.6801,
+        -122.1206
+      ],
+      "metro": 819,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56299
+  },
+  {
+    "time": "2018-12-03T00:38:01.657Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "104.19.195.151",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        1745879040,
+        1746403327
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "",
+      "city": "",
+      "ll": [
+        37.751,
+        -97.822
+      ],
+      "metro": 0,
+      "area": 1000
+    },
+    "srcport": 56379,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.657Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "104.19.195.151",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        1745879040,
+        1746403327
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "",
+      "city": "",
+      "ll": [
+        37.751,
+        -97.822
+      ],
+      "metro": 0,
+      "area": 1000
+    },
+    "srcport": 56379,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.657Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.657Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.684Z",
+    "srcaddr": "104.19.195.151",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        1745879040,
+        1746403327
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "",
+      "city": "",
+      "ll": [
+        37.751,
+        -97.822
+      ],
+      "metro": 0,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56379
+  },
+  {
+    "time": "2018-12-03T00:38:01.684Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:01.684Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.684Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.696Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:01.696Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:01.696Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:01.748Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:01.750Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.004Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.005Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.006Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.008Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.008Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.009Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.009Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.009Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.009Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.011Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.011Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.011Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.011Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.112Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.113Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.113Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.113Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.113Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.113Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.346Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.44.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2539990016,
+        2539991039
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56319,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.363Z",
+    "srcaddr": "151.101.44.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2539990016,
+        2539991039
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56319
+  },
+  {
+    "time": "2018-12-03T00:38:02.421Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56318,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.421Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56320,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.438Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56318
+  },
+  {
+    "time": "2018-12-03T00:38:02.438Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56320
+  },
+  {
+    "time": "2018-12-03T00:38:02.522Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "216.58.216.238",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3627732992,
+        3627737087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 53411,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.536Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "52.1.53.105",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        872415232,
+        872939519
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/New_York",
+      "city": "Ashburn",
+      "ll": [
+        39.0481,
+        -77.4728
+      ],
+      "metro": 511,
+      "area": 1000
+    },
+    "srcport": 56313,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.537Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "52.1.53.105",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        872415232,
+        872939519
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/New_York",
+      "city": "Ashburn",
+      "ll": [
+        39.0481,
+        -77.4728
+      ],
+      "metro": 511,
+      "area": 1000
+    },
+    "srcport": 56313,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.556Z",
+    "srcaddr": "216.58.216.238",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3627732992,
+        3627737087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 53411
+  },
+  {
+    "time": "2018-12-03T00:38:02.556Z",
+    "srcaddr": "216.58.216.238",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3627732992,
+        3627737087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 53411
+  },
+  {
+    "time": "2018-12-03T00:38:02.556Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "216.58.216.238",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3627732992,
+        3627737087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 53411,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "52.1.53.105",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        872415232,
+        872939519
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/New_York",
+      "city": "Ashburn",
+      "ll": [
+        39.0481,
+        -77.4728
+      ],
+      "metro": 511,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56313
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "52.1.53.105",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        872415232,
+        872939519
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/New_York",
+      "city": "Ashburn",
+      "ll": [
+        39.0481,
+        -77.4728
+      ],
+      "metro": 511,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56313
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "151.101.184.133",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56395
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "151.101.184.133",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        2540025856,
+        2540026879
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Chicago",
+      "city": "Chicago",
+      "ll": [
+        41.8483,
+        -87.6517
+      ],
+      "metro": 602,
+      "area": 1000
+    },
+    "srcport": 56395,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.628Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "52.1.53.105",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        872415232,
+        872939519
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/New_York",
+      "city": "Ashburn",
+      "ll": [
+        39.0481,
+        -77.4728
+      ],
+      "metro": 511,
+      "area": 1000
+    },
+    "srcport": 56313,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.629Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.113",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56333
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.113",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56333,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.693Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.694Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.708Z",
+    "srcaddr": "192.30.253.116",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 443,
+    "dstport": 56324
+  },
+  {
+    "time": "2018-12-03T00:38:02.753Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "192.30.253.116",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        3223256064,
+        3223257087
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "San Francisco",
+      "ll": [
+        37.7697,
+        -122.3933
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 56324,
+    "dstport": 443
+  },
+  {
+    "time": "2018-12-03T00:38:04.240Z",
+    "srcaddr": "10.0.0.249",
+    "dstaddr": "108.177.112.125",
+    "srcloc": null,
+    "dstloc": {
+      "range": [
+        1823539200,
+        1823571967
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "srcport": 54732,
+    "dstport": 5222
+  },
+  {
+    "time": "2018-12-03T00:38:04.265Z",
+    "srcaddr": "108.177.112.125",
+    "dstaddr": "10.0.0.249",
+    "srcloc": {
+      "range": [
+        1823539200,
+        1823571967
+      ],
+      "country": "US",
+      "region": "NA",
+      "eu": "0",
+      "timezone": "America/Los_Angeles",
+      "city": "Mountain View",
+      "ll": [
+        37.4192,
+        -122.0574
+      ],
+      "metro": 807,
+      "area": 1000
+    },
+    "dstloc": null,
+    "srcport": 5222,
+    "dstport": 54732
+  }
+]
