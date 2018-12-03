@@ -50,7 +50,18 @@
                 <span v-html="getLocationText(p.dstloc)"/>
               </v-flex>
             </v-layout>
-            <!-- {{ p }} -->
+            <v-layout row>
+              <v-flex xs6>
+                <a v-if="!isExitPacket(p)" @click="openPacketLink(p)">
+                  WHOIS IP Link
+                </a>
+              </v-flex>
+              <v-flex xs6>
+                <a v-if="isExitPacket(p)" @click="openPacketLink(p)">
+                  WHOIS IP Link
+                </a>
+              </v-flex>
+            </v-layout>
           </v-container>
         </v-card>
       </v-flex>
@@ -60,11 +71,12 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
+import { shell } from 'electron';
 
 export default {
   computed: {
     ...mapState('PacketCaptureApi', ['packets', 'activePacket']),
-    ...mapGetters('PacketCaptureApi', ['isExitPacket']),
+    ...mapGetters('PacketCaptureApi', ['isExitPacket', 'getWhoIsLinkTo']),
     sortedPackets () {
       // sort by time sent by newest first
       return this.packets.slice().sort((a, b) => new Date(b.time) - new Date(a.time));
@@ -92,6 +104,10 @@ export default {
       } else {
         this.setActivePacket(null);
       }
+    },
+    openPacketLink (p) {
+      const link = this.getWhoIsLinkTo(this.isExitPacket(p) ? p.dstaddr : p.srcaddr);
+      shell.openExternal(link);
     },
   },
 };

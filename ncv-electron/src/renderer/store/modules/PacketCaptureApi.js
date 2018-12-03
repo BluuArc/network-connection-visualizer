@@ -65,13 +65,17 @@ export default {
   },
   getters: {
     getPacketId: () => (packet) => [
+      'packet',
       packet.time,
       packet.srcaddr, packet.srcport,
       packet.dstaddr, packet.dstport
-    ].join('__'),
+    ]
+      .join('__')
+      .replace(/(\.|:)+/g, '-'),
 
     // check if packet goes from me to them
     isExitPacket: () => (packet) => !packet.srcloc, // if srcloc is null, then it's from me
+    getWhoIsLinkTo: () => (ip) => `https://www.whois.com/whois/${ip}`,
   },
   actions: {
     async getDeviceList ({ commit }) {

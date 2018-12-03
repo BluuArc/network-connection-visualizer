@@ -12,10 +12,10 @@ import { mapState } from 'vuex';
 export default {
   computed: {
     ...mapState('PacketCaptureApi', ['packetsByTime', 'activePacket']),
-    viewBoxDimensions: () => [1500, 250],
+    viewBoxDimensions: () => [2500, 275],
     margins: () => ({ top: 30, right: 20, bottom: 30, left: 50 }),
     offsetDimensions () {
-      const [width, height] = [+(this.$el && this.$el.clientWidth) || this.viewBoxDimensions[0], this.viewBoxDimensions[1]];
+      const [width, height] = this.viewBoxDimensions;
       const margins = this.margins;
       return [
         width - margins.left - margins.right,
@@ -51,14 +51,13 @@ export default {
 
       this.line = d3.line()
         .x((p, i) => this.scale.x(new Date(p.time)))
-        .curve(d3.curveMonotoneX);
+        .curve(d3.curveLinear);
 
       this.graphGroup = this.svg.append('g')
         .attr('transform', `translate(${this.margins.left}, ${this.margins.top})`);
     },
     updateScales () {
-      this.scale.x.domain(d3.extent(this.packetsByTime.map(p => new Date(p.time))))
-        .range([0, this.offsetDimensions[0]]);
+      this.scale.x.domain(d3.extent(this.packetsByTime.map(p => new Date(p.time))));
       console.debug(this.scale.x.domain());
       this.scale.y.domain([0, d3.max(this.packetsByTime.map(p => Math.max(p.count.in, p.count.out)))]);
     },
@@ -108,8 +107,9 @@ export default {
       if (line.empty()) {
         line = this.graphGroup.append('rect')
           .attr('id', 'time-indicator')
-          .attr('height', this.offsetDimensions[1])
+          .attr('height', this.viewBoxDimensions[1])
           .attr('width', 1)
+          .attr('transform', `translate(0, -${this.margins.top})`)
           .attr('fill', 'white');
       }
       if (this.activePacket) {

@@ -12,12 +12,15 @@ import { mapState, mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapState('PacketCaptureApi', ['packets']),
+    ...mapState('PacketCaptureApi', ['packets', 'activePacket']),
     ...mapState('PacketCaptureApi', {
       mapLocation: 'location',
     }),
     ...mapGetters('PacketCaptureApi', ['getPacketId']),
     viewBoxDimensions: () => [1920, 960],
+    activePacketId () {
+      return this.activePacket && this.getPacketId(this.activePacket);
+    },
   },
   data () {
     return {
@@ -43,7 +46,7 @@ export default {
       this.projection = d3.geoEqualEarth()
         .translate([width / 2, height / 2])
         .fitExtent([[1, 1], [width - 1, height - 1]], world)
-        .precision(0.1)
+        .precision(0.1);
       this.path = d3.geoPath().projection(this.projection);
 
       this.svg.append('path')
@@ -120,14 +123,15 @@ export default {
 
       packetPaths
         .enter().append('path')
-        .classed('route', true)
+        .classed('packet-path', true)
+        .classed('active-path', p => this.activePacketId && this.getPacketId(p) === this.activePacketId)
         .classed('exit-route', p => !!p.dstloc)
         .classed('enter-route', p => !!p.srcloc)
         .attr('id', this.getPacketId)
         .attr('d', generatePath);
 
       packetPaths.exit().remove();
-    }
+    },
   },
   watch: {
     mapLocation: {
@@ -147,6 +151,12 @@ export default {
         this.drawPackets();
         this.drawPacketPaths();
       }
+    },
+    activePacket (newValue) {
+      if (this.packets && this.packets.length > 0) {
+        this.svg.selectAll('.packet-path.active-path').classed('active-path', false);
+        this.svg.selectAll(`.packet-path#${this.activePacketId}`).classed('active-path', true);
+      }
     }
   },
 };
@@ -157,15 +167,24 @@ svg.network-map {
   border: 1px solid white;
 
 }
-svg.network-map path.route {
+svg.network-map path.packet-path {
   fill: transparent;
 }
 
-svg.network-map path.route.exit-route {
+svg.network-map path.packet-path.active-path {
+  animation: pulsing-path 2s alternate linear infinite;
+}
+
+@keyframes pulsing-path {
+  from { stroke-width: 1px; }
+  to { stroke-width: 10px; }
+}
+
+svg.network-map path.packet-path.exit-route {
   stroke: cornflowerblue;
 }
 
-svg.network-map path.route.enter-route {
+svg.network-map path.packet-path.enter-route {
   stroke: orange;
 }
 </style>
