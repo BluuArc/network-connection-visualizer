@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app dark>
-      <v-navigation-drawer
+      <!-- <v-navigation-drawer
         fixed
         v-model="drawer"
         app>
@@ -21,7 +21,7 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
       <v-toolbar fixed app>
         <!-- <v-toolbar-side-icon @click.native.stop="drawer = !drawer"></v-toolbar-side-icon> -->
         <v-toolbar-title v-text="title"></v-toolbar-title>
